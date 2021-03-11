@@ -31,9 +31,10 @@ public class BlockchainMain {
         
         while (true) {
             System.out.println("1: ADD BLOCK");
-            System.out.println("2: PRINT BLOCKS");
+            System.out.println("2: ADD MULTIPLE BLOCKS");
             System.out.println("3: CHECK VALIDITY");
             System.out.println("4: ALTER DATA");
+            System.out.println("5: PRINT BLOCKS");
             System.out.println("0: END");
             
             Scanner reader = new Scanner(System.in);
@@ -49,13 +50,25 @@ public class BlockchainMain {
                 Block block = new Block(blockId, blockData, blockPreviousHash, blockTimestamp);
                 blockchain.addBlock(block);
                 continue; 
-                
+            
             } else if (input.equals("2")) {
-                blockchain.getAll();
+                System.out.print("NUMBER OF BLOCKS TO BE ADDED: ");
+                int number = Integer.valueOf(reader.nextLine());
+                for (int i = 0; i < number; i++) {
+                    int blockId = blockchain.generateId();
+                    String blockData = "DATA ENTRY FOR ID " + blockId;
+                    String blockPreviousHash = blockchain.getPreviousHash();
+                    Date blockDate = new Date();
+                    long blockTimestamp = genesisGetDate.getTime();
+                    Block block = new Block(blockId, blockData, blockPreviousHash, blockTimestamp);
+                    blockchain.addBlock(block);
+                }
                 continue; 
+
             } else if (input.equals("3")) {
-                System.out.println(blockchain.isValid());
-                
+                System.out.println("---------------");
+                System.out.println("CHAIN VALID: " + blockchain.isValid());
+                System.out.println("---------------");
             
             } else if (input.equals("4")) {
                 System.out.print("ENTER ID: ");
@@ -63,20 +76,30 @@ public class BlockchainMain {
                 System.out.print("ENTER DATA: ");
                 String newData = reader.nextLine();
                 if (alterId < 0 || alterId > blockchain.generateId()-1) {
-                    System.out.println("INVALID ID. PLEASE TRY AGAIN");
+                    System.out.println("ERROR. INVALID ID. PLEASE TRY AGAIN");
                     continue;
                 } else if (alterId == blockchain.generateId()-1) {
-                    System.out.println("ID CAN NOT BE THE LAST BLOCK IN THE CHAIN");
+                    System.out.println("---------------");
+                    System.out.println("WARNING! ID CAN NOT BE THE LAST BLOCK IN THE CHAIN. PLEASE TRY AGAIN");
+                    System.out.println("---------------");
                     continue; 
                 }
                 blockchain.alterData(alterId, newData);                
+                System.out.println("---------------");
+                System.out.println("DATA ALTERED.");
+                System.out.println("---------------");
                 continue;
-            
+                
+            } else if (input.equals("5")) {
+                blockchain.getAll();
+                continue; 
             } else if (input.equals("0")) {
                 break;
                 
             } else {
+                System.out.println("---------------");
                 System.out.println("INVALID COMMAND. TRY AGAIN. PRESS 0 TO END.");
+                System.out.println("---------------");
             }
             
             
