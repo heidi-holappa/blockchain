@@ -45,7 +45,7 @@ public class Block {
     }
     
     public String getHash() {
-        return this.hash;
+        return calculateBlockHash();
     }
     
     public String getPreviousHash() {
