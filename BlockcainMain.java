@@ -65,6 +65,9 @@ public class BlockchainMain {
                 if (alterId < 0 || alterId > blockchain.generateId()-1) {
                     System.out.println("INVALID ID. PLEASE TRY AGAIN");
                     continue;
+                } else if (alterId == blockchain.generateId()-1) {
+                    System.out.println("ID CAN NOT BE THE LAST BLOCK IN THE CHAIN");
+                    continue; 
                 }
                 blockchain.alterData(alterId, newData);                
                 continue;
