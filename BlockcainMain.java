@@ -40,6 +40,7 @@ public class BlockchainMain {
             Scanner reader = new Scanner(System.in);
             String input = reader.nextLine();
             
+            // Add a single block to the chain
             if (input.equals("1")) {
                 System.out.print("ENTER DATA: ");
                 String blockData = reader.nextLine();
@@ -51,6 +52,7 @@ public class BlockchainMain {
                 blockchain.addBlock(block);
                 continue; 
             
+            // Add multiple blocks with automatically generated data-entry.
             } else if (input.equals("2")) {
                 System.out.print("NUMBER OF BLOCKS TO BE ADDED: ");
                 int number = Integer.valueOf(reader.nextLine());
@@ -65,11 +67,13 @@ public class BlockchainMain {
                 }
                 continue; 
 
+            // Check is chain valid. For block's which id is between 0 <= id < n, where n = (blockchain.size() - 1), the previousHash of block m+1 must equal the hash of block m. 
             } else if (input.equals("3")) {
                 System.out.println("---------------");
                 System.out.println("CHAIN VALID: " + blockchain.isValid());
                 System.out.println("---------------");
             
+            // Change data on selected block to see what happens to the chain. 
             } else if (input.equals("4")) {
                 System.out.print("ENTER ID: ");
                 int alterId = Integer.valueOf(reader.nextLine());
@@ -89,7 +93,8 @@ public class BlockchainMain {
                 System.out.println("DATA ALTERED.");
                 System.out.println("---------------");
                 continue;
-                
+            
+            // Print all items in the ArrayList blockchain to console.     
             } else if (input.equals("5")) {
                 blockchain.getAll();
                 continue; 
@@ -104,16 +109,6 @@ public class BlockchainMain {
             
             
         }
-        
-        
-        // Get all blocks
-        
-        
-        
-
-        // Create a simple console-UI for submitting blocks and then options to violate the chain and to see what happens
 
     }
-
-    
 }
