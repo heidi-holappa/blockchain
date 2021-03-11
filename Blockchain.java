@@ -40,7 +40,7 @@ public class Blockchain {
     }
     
     public boolean isValid() {
-        int size = blockchain.size()-1;
+        int size = blockchain.size();
         for (int i = 0; i < size; i++) {
             if (!blockchain.get(i).getHash().equals(blockchain.get(i+1).getPreviousHash())) {
                 return false; 
