@@ -3,15 +3,15 @@ import java.time.LocalDateTime;
 public class Block {
   
   private int id;
-  private String message;
+  private String data;
   private String privateKey;
-  private String publicKey;
-  private String previousPublicKey;
+  private String Hash;
+  private String previousHash;
   public LocalDateTime date; 
   
   
   // Create a block
-  public Block(int id, String message, String previousPublicKey, String privateKey, LocalDateTime date) {
+  public Block(int id, String data, String perviousHash, LocalDateTime date) {
     this.id = id;
     this.message = message;
     this.previousPublicKey = previousPublicKey;
