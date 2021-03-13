@@ -8,11 +8,11 @@ Features:
 1) Automatically creates a genesis-block and a blockchain
 2) A simple console UI enables you to
 <ul>
-    <li>i. add a single block</li>
-    <li>ii. quickly add multiple blocks</li>
-    <li>iii. check blockchain validity</li>
-    <li>iv. alter data of a selected block</li>
-    <li>v. print blocks in the blockchain</li>
-    <li>vi. edit the prefix-value that determines the number of zeroes that is placed in the beginning of the hash (can be set to be between 1-8)</li>
-    <li>vii. run a demo that creates a single block with prefix from 1 to 6. </li>
+    <li>add a single block</li>
+    <li>quickly add multiple blocks</li>
+    <li>check blockchain validity</li>
+    <li>alter data of a selected block</li>
+    <li>print blocks in the blockchain</li>
+    <li>edit the prefix-value that determines the number of zeroes that is placed in the beginning of the hash (can be set to be between 1-8)</li>
+    <li>run a demo that creates a single block with prefix from 1 to 6. </li>
 </ul>
