@@ -14,5 +14,5 @@ Features:
     <li>alter data of a selected block</li>
     <li>print blocks in the blockchain</li>
     <li>edit the prefix-value that determines the number of zeroes that is placed in the beginning of the hash (can be set to be between 1-8)</li>
-    <li>run a demo that creates a single block with prefix from 1 to 6. </li>
+    <li>run a demo that creates a blocks with prefix set from 1 to 6. </li>
 </ul>
