@@ -32,7 +32,7 @@ public class Block {
         this.date = date;
         this.hash = "NOTMINED";
 
-    // call a method that creates the public key and perhaps a private key? 
+    
     
     }
   
